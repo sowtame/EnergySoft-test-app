@@ -1,0 +1,10 @@
+@import "reset-css/sass/_reset";
+@import "./vars.scss";
+
+// components
+
+@import "./wrapper/index.scss";
+
+body {
+  background-color: #e0e5ec;
+}
