@@ -1,9 +1,10 @@
-import React from 'react';
+import { CrawlLines } from "components/CrawlLines";
+import React from "react";
 
 function App() {
   return (
     <div className="wrapper">
-      <div className="box"></div>
+      <CrawlLines />
     </div>
   );
 }
