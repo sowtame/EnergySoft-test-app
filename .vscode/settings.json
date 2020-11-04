@@ -1,3 +1,35 @@
 {
-    "editor.formatOnSave": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.untitled.labelFormat": "name",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.semi": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+
+  "prettier.endOfLine": "lf",
+  "prettier.packageManager": "npm",
+  // The following will hide the js and map files in the editor
+  "files.exclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.idea/**": true,
+    "**/test/**": true,
+    // "**/.gitignore/**": true,
+    "**/.prettierignore/**": true,
+    "**/jest.config.js/**": true,
+    "**/next-env.d.ts/**": true,
+    "**/package-lock.json/**": true,
+    "**/README.md/**": true,
+    "**/.eslintignore/**": true,
+    "**/.prettierrc/**": true,
+    "**/.babelrc/**": true,
+    "**/.eslintrc.json/**": true,
+    "**/.eslintrc1.json/**": true,
+    "**/tsconfig.json/**": true,
+    "**/yarn.lock/**": true
+  }
 }

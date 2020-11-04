@@ -19,8 +19,6 @@
     background-color: $lightGray;
     box-shadow: $NeumorphismShadow;
 
-    animation: moveLeftToRightReverse 5s infinite both;
-
     transition: all 0.3s ease-in-out;
 
     &::after {

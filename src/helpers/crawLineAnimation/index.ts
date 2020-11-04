@@ -2,9 +2,11 @@
 export const KeyframeFormats = [
   {
     transform: "translateX(0)",
+    easing: "ease-in-out",
   },
   {
     transform: `translateX(calc(${window.innerWidth - 550}px))`,
+    easing: "ease-in-out",
   },
   {
     transform: "translateX(0)",
@@ -12,7 +14,8 @@ export const KeyframeFormats = [
 ];
 
 // Настройки анимации
-export const KeyframeConfig = {
+export const KeyframeConfig: KeyframeAnimationOptions = {
   duration: 4000,
   iterations: Infinity,
+  fill: "both",
 };

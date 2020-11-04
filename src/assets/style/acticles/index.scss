@@ -1,0 +1,33 @@
+.acticles {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+
+  .article {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    .link {
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+    }
+
+    svg {
+      cursor: pointer;
+      margin-right: 20px;
+      height: 22px;
+      width: 22px;
+    }
+    .like_svg.active {
+      path {
+        fill: red;
+      }
+    }
+  }
+
+  .loader {
+    margin-top: 20px;
+  }
+}

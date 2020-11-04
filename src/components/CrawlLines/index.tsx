@@ -1,7 +1,7 @@
-import { CrawlLine } from "components/CrawlLine";
+import { CrawlLine } from "components/CrawlLines/CrawlLine";
 import React from "react";
 import { useSelector } from "react-redux";
-import { selCrawlLines } from "store/CrawlLineSlice";
+import { selCrawlLines } from "store/CrawlLine/Selectors";
 
 export const CrawlLines = () => {
   const crawlLines = useSelector(selCrawlLines);
