@@ -1,7 +1,12 @@
 .acticles {
   margin-top: 100px;
+  height: 50vh;
   display: flex;
   flex-direction: column;
+
+  .acticles_list {
+    overflow: hidden !important;
+  }
 
   .article {
     margin-top: 20px;

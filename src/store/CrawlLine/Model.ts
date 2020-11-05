@@ -14,7 +14,7 @@ export class ArticleModel implements IArticle {
   isLiked: boolean;
 
   constructor(params: any) {
-    const randomArticleCnt = randomInteger(0, params.data.dist);
+    const randomArticleCnt = randomInteger(0, params.data.dist - 1);
     const randomArticle = params.data.children[randomArticleCnt].data;
     this.title = randomArticle.title;
     this.url = randomArticle.url;
