@@ -5,7 +5,7 @@
   flex-direction: column;
 
   .acticles_list {
-    overflow: hidden !important;
+    will-change: auto !important;
   }
 
   .article {
