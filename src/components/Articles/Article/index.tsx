@@ -15,16 +15,18 @@ export const Article = ({ article: { url, title, id, isLiked }, style }: Props) 
 
   const onLike = useCallback(() => {
     dispatch(likeArticleAction(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const onRemove = useCallback(() => {
     dispatch(removeArticleAction(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <div className='article' style={style}>
-      <Like onClick={onLike} className={`like_svg ${isLiked ? 'active' : ''}`} />
-      <Trash onClick={onRemove} />
+      <div className='action-btns'>
+        <Like onClick={onLike} className={`like_svg ${isLiked ? 'active' : ''}`} />
+        <Trash onClick={onRemove} />
+      </div>
       <a href={url} className='link' target='blank' key={id}>
         {title}
       </a>
