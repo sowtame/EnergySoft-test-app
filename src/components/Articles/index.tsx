@@ -17,7 +17,7 @@ export const Articles = () => {
         className='acticles_list'
         height={window.innerHeight / 2 - 100}
         itemCount={articles.length}
-        itemSize={30}
+        itemSize={45}
         ref={ref}
         width={window.innerWidth - 400}
         outerElementType={CustomScrollbarsVirtualList}>
