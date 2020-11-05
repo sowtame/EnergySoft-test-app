@@ -5,6 +5,7 @@ export const KeyframeFormats = [
     easing: 'ease-in-out',
   },
   {
+    // Ширина экрана - отступы
     transform: `translateX(calc(${window.innerWidth - 550}px))`,
     easing: 'ease-in-out',
   },
