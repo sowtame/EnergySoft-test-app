@@ -1,4 +1,4 @@
-Aviasales-test-app - [Demo](https://test-app-gules.vercel.app/)
+Test-app - [Demo](https://test-app-gules.vercel.app/)
 
 **Stack:**
 
