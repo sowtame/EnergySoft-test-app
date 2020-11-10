@@ -1,4 +1,4 @@
-Aviasales-test-app - [Demo](https://sowtame.github.io/Test-app/)
+Test-app - [Demo](https://test-app-gules.vercel.app/)
 
 **Stack:**
 
