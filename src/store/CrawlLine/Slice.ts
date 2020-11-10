@@ -24,7 +24,6 @@ export const slice = createSlice({
   initialState,
   reducers: {
     fetchArticleAction: (state, action) => {
-      console.log(action.payload);
       state.isLoading = true;
     },
     fetchArticleSuccessAction: (state, { payload }) => {

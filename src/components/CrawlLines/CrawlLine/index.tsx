@@ -1,7 +1,8 @@
-import { KeyframeConfig, KeyframeFormats } from "helpers/crawLineAnimation";
-import React, { useCallback, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { fetchArticleAction } from "store/CrawlLine/Slice";
+import { KeyframeConfig, getKeyframeFormats } from 'helpers/crawLineAnimation';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchArticleAction } from 'store/CrawlLine/Slice';
+import { useWindowSize } from 'utils/Hooks/useWindowSize';
 
 interface Props {
   term: string;
@@ -13,11 +14,13 @@ export const CrawlLine = ({ term }: Props) => {
   // Сохраним обьект анимации в в хуке, для его сохранности
   const animation = useRef<Animation>();
 
+  const { width } = useWindowSize();
+
   useEffect(() => {
     const el = ref.current;
     // Создаем анимацию (начальная анимация движения)
-    animation.current = el?.animate(KeyframeFormats, KeyframeConfig);
-  }, [ref]);
+    animation.current = el?.animate(getKeyframeFormats(width), KeyframeConfig);
+  }, [ref, width]);
 
   const onMouseEnter = () => {
     // При наведение мыши остановить
@@ -32,13 +35,7 @@ export const CrawlLine = ({ term }: Props) => {
     dispatch(fetchArticleAction(term));
   }, [dispatch, term]);
   return (
-    <div
-      ref={ref}
-      className="crawlLine"
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <div ref={ref} className='crawlLine' onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {term}
     </div>
   );

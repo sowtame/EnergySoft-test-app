@@ -2,7 +2,7 @@ import { AnyAction } from '@reduxjs/toolkit';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { ArticleModel } from 'store/CrawlLine/Model';
 import { fetchArticleAction, fetchArticleFailAction, fetchArticleSuccessAction } from 'store/CrawlLine/Slice';
-import { fetchApi } from 'utils/fetch';
+import { fetchApi } from 'utils/Fetch';
 
 export function* incrementAsync({ payload }: AnyAction<string>) {
   try {

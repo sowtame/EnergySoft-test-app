@@ -1,12 +1,13 @@
 // Ключи анимации
-export const KeyframeFormats = [
+
+export const getKeyframeFormats = (width: number) => [
   {
     transform: 'translateX(0)',
     easing: 'ease-in-out',
   },
   {
     // Ширина экрана - отступы
-    transform: `translateX(calc(${window.innerWidth - 550}px))`,
+    transform: `translateX(calc(${width - 550}px))`,
     easing: 'ease-in-out',
   },
   {

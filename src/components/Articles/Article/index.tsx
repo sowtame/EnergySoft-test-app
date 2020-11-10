@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { IArticle } from 'store/CrawlLine/Model';
 import { ReactComponent as Like } from 'assets/svg/like.svg';
 import { ReactComponent as Trash } from 'assets/svg/trash.svg';
@@ -13,13 +13,8 @@ interface Props {
 export const Article = ({ article: { url, title, id, isLiked }, style }: Props) => {
   const dispatch = useDispatch();
 
-  const onLike = useCallback(() => {
-    dispatch(likeArticleAction(id));
-  }, [dispatch, id]);
-
-  const onRemove = useCallback(() => {
-    dispatch(removeArticleAction(id));
-  }, [dispatch, id]);
+  const onLike = () => dispatch(likeArticleAction(id));
+  const onRemove = () => dispatch(removeArticleAction(id));
 
   return (
     <div className='article' style={style}>

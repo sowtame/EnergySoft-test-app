@@ -5,21 +5,23 @@ import { IArticle } from 'store/CrawlLine/Model';
 import { selActicleLoading, selActicles } from 'store/CrawlLine/Selectors';
 import { FixedSizeList as List } from 'react-window';
 import { CustomScrollbarsVirtualList } from 'components/Articles/CustomScrollbars';
+import { useWindowSize } from 'utils/Hooks/useWindowSize';
 
 export const Articles = () => {
   const ref = useRef(null);
   const articles: IArticle[] = useSelector(selActicles);
   const isLoading: boolean = useSelector(selActicleLoading);
+  const { width, height } = useWindowSize();
 
   return (
     <div className='acticles'>
       <List
         className='acticles_list'
-        height={window.innerHeight / 2 - 100}
+        height={height / 2 - 100}
         itemCount={articles.length}
         itemSize={45}
         ref={ref}
-        width={window.innerWidth - 400}
+        width={width - 400}
         outerElementType={CustomScrollbarsVirtualList}>
         {({ index, style }) => <Article article={articles[index]} style={style} />}
       </List>
