@@ -1,1 +1,1 @@
-export const ruturnValue = (v: any) => v;
+export const ruturnValue = <T>(v: T): T => v;

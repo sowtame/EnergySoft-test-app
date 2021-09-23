@@ -1,5 +1,5 @@
 import { KeyframeConfig, getKeyframeFormats } from 'helpers/crawLineAnimation';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchArticleAction } from 'store/CrawlLine/Slice';
 import { useWindowSize } from 'utils/Hooks/useWindowSize';
@@ -11,6 +11,7 @@ interface Props {
 export const CrawlLine = ({ term }: Props) => {
   const dispatch = useDispatch();
   const ref = useRef<HTMLDivElement>(null);
+
   // Сохраним обьект анимации в в хуке, для его сохранности
   const animation = useRef<Animation>();
 
@@ -30,10 +31,9 @@ export const CrawlLine = ({ term }: Props) => {
     // При отводе мыши продолжить
     animation.current?.play();
   };
-  const onClick = useCallback(() => {
-    // Сделать запрос к беку редита
+  const onClick = () => {
     dispatch(fetchArticleAction(term));
-  }, [dispatch, term]);
+  };
   return (
     <div ref={ref} className='crawlLine' onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {term}

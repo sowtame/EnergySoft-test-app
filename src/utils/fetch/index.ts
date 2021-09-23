@@ -1,9 +1,6 @@
-export const fetchApi = async (url: string) => {
+export const fetchApi = async <T>(url: string): Promise<T> => {
   const response = await fetch(url, {
-    // method: 'GET',
-    // headers: {
-    //   'Cache-Control': 'private',
-    // },
+    method: 'GET',
   });
   return response.json();
 };

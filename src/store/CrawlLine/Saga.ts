@@ -6,7 +6,7 @@ import { fetchApi } from 'utils/Fetch';
 
 export function* incrementAsync({ payload }: AnyAction<string>) {
   try {
-    const response = yield call(fetchApi, `https://www.reddit.com/r/${payload}.json`);
+    const response: ArticleModel = yield call(fetchApi, `https://www.reddit.com/r/${payload}.json`);
     yield put(fetchArticleSuccessAction(new ArticleModel(response)));
   } catch {
     yield put(fetchArticleFailAction());

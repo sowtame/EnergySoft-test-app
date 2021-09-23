@@ -43,10 +43,8 @@ export const slice = createSlice({
       state.articles.splice(articleId, 1, { ...article, isLiked: !article.isLiked });
     },
     removeArticleAction: (state, { payload }) => {
-      // Найдем айдишник
       const articleId = getArticleId(state.articles, payload);
 
-      // Удалим из стейта
       state.articles.splice(articleId, 1);
     },
   },
