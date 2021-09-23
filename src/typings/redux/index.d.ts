@@ -1,7 +1,7 @@
-import { Action } from "@reduxjs/toolkit";
+import { Action } from '@reduxjs/toolkit';
 
-declare module "@reduxjs/toolkit" {
-  export interface AnyAction<T = any> extends Action {
+declare module '@reduxjs/toolkit' {
+  export interface CommonAction<T = any> extends Action {
     payload: T;
   }
 }
